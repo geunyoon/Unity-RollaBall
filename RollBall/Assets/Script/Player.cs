@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float speed;
+    public Text scoreText;
+    public Text winText;
 
     private Rigidbody rb;
+    private int score;
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        score = 0;
+        SetScoreText();
+        //score
+        winText.text = "";
+        //display nothing in win text when game start
     }
     void FixedUpdate ()
     {
@@ -27,6 +36,20 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Collectable"))
         {
             other.gameObject.SetActive(false);
+            //removing the Collectable object in collision
+            score = score + 1;
+            SetScoreText();
+            //tracking score
+        }
+    }
+    void SetScoreText ()
+    {
+        scoreText.text = "Score: " + score.ToString();
+        //adding the score
+        if (score >= 10)
+        {
+            winText.text = "You Win!";
+            //diplaying the win text when every collectable is collected
         }
     }
 }
