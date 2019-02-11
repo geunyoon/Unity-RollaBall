@@ -628,6 +628,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\CameraMovement.cs" />
     <Compile Include="Assets\Script\Player.cs" />
   </ItemGroup>
   <ItemGroup>
