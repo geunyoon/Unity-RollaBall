@@ -630,6 +630,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraMovement.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\Rotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryCommon.uss" />
