@@ -45,11 +45,5 @@ public class Player : MonoBehaviour
     void SetScoreText ()
     {
         scoreText.text = "Score: " + score.ToString();
-        //adding the score
-        if (score >= 10)
-        {
-            winText.text = "You Win!";
-            //diplaying the win text when every collectable is collected
-        }
     }
 }
