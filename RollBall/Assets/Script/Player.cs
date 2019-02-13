@@ -46,4 +46,23 @@ public class Player : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
     }
+
+    private void OncollisionStay(Collision coillsion)
+    {
+        if(!Collision.gameObject.CompareTag("Ground"))
+        {
+            return;
+        }
+        isGrounded = true;
+        //collision with ground only count
+    }
+    private void Update()
+    {
+        if(Input.GetButton("Jump") && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            isGrounded = false;
+        }
+        //calculating jump force and making isGrounded = false as soon as jump
+    }
 }
