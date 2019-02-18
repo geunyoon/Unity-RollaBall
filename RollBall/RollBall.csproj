@@ -630,6 +630,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraMovement.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\Respawn.cs" />
     <Compile Include="Assets\Script\Rotation.cs" />
     <Compile Include="Assets\Script\Timer.cs" />
   </ItemGroup>
