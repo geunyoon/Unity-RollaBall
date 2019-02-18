@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     TextMeshProUGUI text;
     //text field
 
-    public float time = 30;
+    public static float time = 30f;
     //remaining time
 
     void Start()
