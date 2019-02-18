@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Text scoreText;
     public Text winText;
     public float jumpPower;
+    public GameObject restartButton, youWin;
 
     private Rigidbody rb;
     private int score;
@@ -20,8 +21,6 @@ public class Player : MonoBehaviour
         score = 0;
         SetScoreText();
         //score
-        winText.text = "";
-        //display nothing in win text when game start
     }
     void FixedUpdate ()
     {
@@ -42,6 +41,12 @@ public class Player : MonoBehaviour
             score = score + 1;
             SetScoreText();
             //tracking score
+        }
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            Time.timeScale = 0;
+            youWin.gameObject.SetActive(true);
+            restartButton.gameObject.SetActive(true);
         }
     }
     void SetScoreText ()

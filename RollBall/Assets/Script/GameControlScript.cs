@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameControlScript: MonoBehaviour
 {
-    public GameObject timeIsUp, restartButton;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject timeIsUp, restartButton, youWin;
 
-    // Update is called once per frame
+
+
     void Update()
     {
         if (Timer.time<=0)
@@ -20,6 +16,7 @@ public class GameControlScript: MonoBehaviour
             Time.timeScale = 0;
             timeIsUp.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
+            //gameover state
 
         }
     }
@@ -27,8 +24,10 @@ public class GameControlScript: MonoBehaviour
     {
         timeIsUp.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
+        youWin.gameObject.SetActive(false);
         Time.timeScale = 1;
-        Timer.time = 60f;
+        Timer.time = 30f;
         SceneManager.LoadScene("Roll a Ball");
+        //restarting the scene
     }
 }
