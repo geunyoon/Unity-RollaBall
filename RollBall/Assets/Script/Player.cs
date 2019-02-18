@@ -8,9 +8,11 @@ public class Player : MonoBehaviour
     public float speed;
     public Text scoreText;
     public Text winText;
+    public float jumpPower;
 
     private Rigidbody rb;
     private int score;
+    private bool isGrounded;
 
     void Start ()
     {
@@ -47,9 +49,9 @@ public class Player : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
-    private void OncollisionStay(Collision coillsion)
+    private void OnCollisionStay(Collision collision)
     {
-        if(!Collision.gameObject.CompareTag("Ground"))
+        if(!collision.gameObject.CompareTag("Ground"))
         {
             return;
         }

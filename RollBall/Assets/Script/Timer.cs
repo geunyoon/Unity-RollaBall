@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TextMeshPro
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        text = Getcomponent<TextMeshProUGUI>();
+        text = GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
